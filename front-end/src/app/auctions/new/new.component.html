@@ -1,0 +1,41 @@
+<div class="padding">
+  <div class="row">
+    <div class="col-12">
+      <p>Aukcije na Internetu - pronaći ćeš sve o čemu si sanjao. Nema lakšeg načina kupovine i prodaje na Internetu.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p><b>Najnovije postavljene aukcije</b></p>
+    </div>
+    <div class="col-6">
+      <p><b>Aukcije koje uskoro ističu</b></p>
+    </div>
+    <div class="col-6">
+      <ngb-carousel [interval]='7000'>
+        <!-- Napravi po slajd za svaku aukciju iz auctionsNew (najnovijih aukcija )-->
+        <ng-template ngbSlide *ngFor="let auction of auctionsNew">
+          <img src="/assets/images/items/{{auction.image}}">
+          <div class="carousel-caption">
+            <h3 class="auctions-sliders-info"><b>{{auction.name}}</b></h3>
+            <p class="auctions-sliders-info"><b>Cena: {{auction.price}},00 din.</b></p>
+            <p class="margin-right auctions-sliders-info"><b>Datum zatvaranja: {{auction.dateEnd}}</b></p>  
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-6">
+      <ngb-carousel [interval]='7000'>
+        <!-- Napravi po slajd za svaku aukciju iz auctionsOld (starih aukcija koje treba da isteknu)-->
+        <ng-template ngbSlide *ngFor="let auction of auctionsOld">
+          <img src="/assets/images/items/{{auction.image}}">
+          <div class="carousel-caption text-dark">
+            <h4 class="auctions-sliders-info "><b>{{auction.name}}</b></h4>
+            <p class="auctions-sliders-info"><b>Cena: {{auction.price}},00 din.</b></p>
+            <p class="margin-right auctions-sliders-info"><b>Datum zatvaranja: {{auction.dateEnd}}</b></p>  
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>

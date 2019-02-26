@@ -1,0 +1,28 @@
+<form (ngSubmit)="changeName()">
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <div class="row">
+        <label class="col-sm-4">Kategorija: </label>
+                                          <!-- Binding za newCategoru promenljivu iz klase | Na promenu/change kategorije, ažuriraj podkategorije--> 
+        <select name="sort" class="form-control col-sm-8" [(ngModel)]="newCategory" (change)="updateSubcategory()"> <!-- Ne zaboraviti da se importuje FormsModule u app.module.ts, importuje se from '@angular/forms'-->
+          <option [ngValue]="''">All</option>
+          <option [ngValue]="category._id" *ngFor="let category of categories">{{ category.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="row">
+        <label class="col-sm-4">Podkategorija: </label>
+        <select name="get" class="form-control col-sm-8" [(ngModel)]="editedSubcategory" (change)="changeCategory()">
+          <option [ngValue]="subcategory" *ngFor="let subcategory of newSubcategory">{{ subcategory }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="row">
+        <label class="col-sm-4">Ime: </label>
+        <input class="form-control col-sm-8" name="name" [(ngModel)]="editedName">
+      </div>
+    </div>
+  </div>
+</form>

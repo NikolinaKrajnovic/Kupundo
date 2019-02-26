@@ -1,0 +1,24 @@
+<div class="row padding">
+  <div class="col-12">
+    <kupi-search-form [categories]="categories" (onChangeCategory)="setCategory($event)" (onChangeName)="setName($event)"></kupi-search-form>
+  </div>
+  <div class="col-12" *ngFor="let auctions of auction">
+    <div class = "row">
+      <div class="col-4">
+<img src="assets/images/items/{{auctions?.image}}">
+      </div>
+      <div class="col-8 text-center">
+       <h2> {{auctions?.name}}</h2>
+       <p>{{auctions?.description}}</p>
+       <b>Cena: {{auctions?.price}},00 din.</b>
+       <p>Datum objave: {{auctions?.dateStart}},0
+            Datum zatvaranja: {{auctions?.dateEnd}}</p>
+      <p>{{auctions?.category}}</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button (click)="loadMore()" *ngIf="showLoadMore">show more</button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+#parent {
+  line-height: 80px;
+}
+
+#parent a {
+    vertical-align: middle;
+    color: #f58220;
+}

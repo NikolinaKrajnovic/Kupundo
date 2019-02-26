@@ -1,0 +1,5 @@
+[
+	{"_id": 1, "name": "Knjige", "subcategories": ["Strucna literatura", "Beletristika", "Stripovi"] },
+	{"_id": 2, "name": "Sportska oprema", "subcategories": ["Roleri i skejt", "Sportska obuca", "Oprema za pecanje"] },
+	{"_id": 3, "name": "Za kucu i bastu", "subcategories": ["Namestaj", "Biljke", "Kucni ljubimci i oprema"] }
+]
